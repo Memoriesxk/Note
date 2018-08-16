@@ -11,4 +11,7 @@ Describe obscure content in as simple and simple language as possible.
 - Python
 - AngularJS
 - Vue.js
+- Algorithm
+- JavaScript
+- C
 - Others
