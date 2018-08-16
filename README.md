@@ -13,5 +13,5 @@ Describe obscure content in as simple and simple language as possible.
 - Vue.js
 - Algorithm
 - JavaScript
-- C
+- CSS
 - Others
