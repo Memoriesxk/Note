@@ -1,0 +1,18 @@
+1、什么是面向对象？
+
+
+2、面向对象的重要设计原则
+        SOLID is the mnemonic acronym introduced by Michael Feathers for the first five principles named by Robert Martin, which meant five basic principles of object-oriented programming and design.
+        S：职责单一原则（SRP）（Single Responsibility Principle）
+        O：开闭原则（OCP）（Open/Close Principle）
+                软件实体（类、模块、功能等）应该对扩展开发，对修改关闭
+                software entities (classes, modules, functions, etc.) should be open for extension, but closed for modification
+        L：里氏替换原则（LSP）（Liskov Substritution Principle）
+        I：接口隔离原则（ISP）（Interface Segregation Principle）
+                客户不应该被强制依赖于他们用不到的接口
+                Clients should not be forced to depend upon interfaces that they do not use.
+        D：依赖反转原则（DIP）（Dependency Inversion Principle）
+                高级模块不应该依赖于低级模块，两者都应该依赖于抽象；               
+                High-level modules should not depend on low-level modules. Both should depend on abstractions.
+                抽象类不应依赖于实例，实例应该依赖于抽象
+               Abstractions should not depend upon details. Details should depend on abstractions.
