@@ -1,0 +1,31 @@
+
+Start 访问
+  [A]public/index.php
+  [B]bootstrap/app.php
+  [C]初始化Application
+		1  注册基本绑定
+			app->Application实例
+			illuminate\Container\Container->Application实例
+		2  注册基本服务提供者并启动
+			EventServiceProvider 事件服务提供者
+			RoutingServiceProvider 路由服务提供者
+  [D]注册共享的Kernel和异常处理器
+  [E]处理请求和响应
+	  a. web请求 - 解析illuminate\Contracts\Http\kernel
+				[1] 构造函数-设置$app/$router，初始化$router中middleware数值
+				[2] handle处理请求-经过路由发送
+					1、$request是经过symfony封装的请求对象
+					2、注册request实例到容器$app['request']->illuminate\Http\Rqquest
+					3、清空之前容器中的request实例
+					4、调用bootstrap方法，启动一系列启动类的bootstrap方法
+						1. 环境配置 $app['env']
+						2. 基本配置 $app['config']
+						3. 日志文件 $app['log']
+						4. 错误&异常处理
+						5. 清除已解析的Facade并重新启动，注册config文件中alias定义的所有Facade类到容器
+						6. 注册config中provider定义的所有Providers类到容器
+						7. 调用所有已注册Providers的boot方法
+					5、通过Pipeline发送请求，经过中间件，再由路由转发，最终返回响应
+				[3] 将响应信息发送到浏览器 $respose->send()
+				[4] 处理继承自TerminableMiddleware接口的中间件(Session)并结束应用生命周期 $kernel->terminate($request,$response);
+	  b. Artisan命令
