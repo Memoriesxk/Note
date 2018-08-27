@@ -232,6 +232,7 @@ Strings
     msetnx
     psetex
     set
+        设置key的内容
     setbit
     setex
     setnx
